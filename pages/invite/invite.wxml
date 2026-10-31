@@ -1,0 +1,53 @@
+<view class="invite-container">
+  <!-- 邀请卡 -->
+  <view class="invite-card">
+    <text class="invite-brand">阅马草堂 · 邀请有礼</text>
+    <view class="invite-code-box">
+      <text class="invite-code-label">您的专属邀请码</text>
+      <text class="invite-code">{{inviteCode}}</text>
+      <button class="copy-btn" bindtap="copyCode">复制邀请码</button>
+    </view>
+    <view class="invite-stats">
+      <view class="stat-item">
+        <text class="stat-num">{{inviteCount}}</text>
+        <text class="stat-label">已邀请</text>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item">
+        <text class="stat-num">{{rewardPoints}}</text>
+        <text class="stat-label">获得积分</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 分享按钮组 -->
+  <view class="share-section">
+    <button class="share-btn" open-type="share">分享给好友</button>
+    <button class="poster-btn" bindtap="generatePoster">生成邀请海报</button>
+  </view>
+
+  <!-- 邀请记录 -->
+  <view class="section" wx:if="{{inviteList.length > 0}}">
+    <view class="section-title">邀请记录</view>
+    <view class="invite-list">
+      <view class="invite-item" wx:for="{{inviteList}}" wx:key="id">
+        <view class="invite-item-left">
+          <text class="invite-name">{{item.nickName}}</text>
+          <text class="invite-time">{{item.time}}</text>
+        </view>
+        <text class="invite-reward">+{{item.reward}}积分</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 活动规则 -->
+  <view class="section">
+    <view class="section-title">活动规则</view>
+    <view class="rules-list">
+      <view class="rule-item" wx:for="{{rules}}" wx:key="index">
+        <text class="rule-num">{{index + 1}}.</text>
+        <text class="rule-text">{{item}}</text>
+      </view>
+    </view>
+  </view>
+</view>

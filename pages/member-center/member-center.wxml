@@ -1,0 +1,63 @@
+<view class="member-container">
+  <!-- 会员卡 -->
+  <view class="member-card">
+    <view class="card-bg"></view>
+    <view class="card-content">
+      <view class="card-top">
+        <text class="card-brand">阅马草堂</text>
+        <text class="card-level">{{levels[currentLevelIndex].icon}} {{userInfo.memberLevel}}</text>
+      </view>
+      <view class="card-points">
+        <text class="points-num">{{userInfo.points}}</text>
+        <text class="points-label">积分</text>
+      </view>
+      <view class="card-expire">
+        <text>到期：{{userInfo.memberExpireAt}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 等级权益 -->
+  <view class="section">
+    <view class="section-title">等级权益</view>
+    <view class="levels-list">
+      <view class="level-item {{index <= currentLevelIndex ? 'unlocked' : ''}}" wx:for="{{levels}}" wx:key="key">
+        <view class="level-header">
+          <text class="level-icon">{{item.icon}}</text>
+          <text class="level-name">{{item.name}}</text>
+          <text class="level-points" wx:if="{{item.points > 0}}">{{item.points}}积分</text>
+          <text class="level-tag" wx:if="{{index === currentLevelIndex}}">当前</text>
+        </view>
+        <view class="level-benefits">
+          <text class="benefit-item" wx:for="{{item.benefits}}" wx:for-item="benefit" wx:key="index">{{benefit}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 积分明细 -->
+  <view class="section">
+    <view class="section-title">积分明细</view>
+    <view class="points-list" wx:if="{{pointsHistory.length > 0}}">
+      <view class="points-item" wx:for="{{pointsHistory}}" wx:key="id">
+        <view class="points-left">
+          <text class="points-desc">{{item.desc}}</text>
+          <text class="points-time">{{item.time}}</text>
+        </view>
+        <text class="points-value {{item.type === 'earn' ? 'earn' : 'spend'}}">
+          {{item.type === 'earn' ? '+' : '-'}}{{item.points}}
+        </text>
+      </view>
+    </view>
+    <view class="empty-hint" wx:else>
+      <text>暂无积分记录</text>
+    </view>
+  </view>
+
+  <!-- 底部按钮 -->
+  <view class="bottom-bar">
+    <button class="open-btn" bindtap="openMember">
+      {{currentLevelIndex === 0 ? '开通会员' : '续费会员'}}
+    </button>
+  </view>
+</view>

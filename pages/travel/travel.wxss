@@ -1,0 +1,148 @@
+.travel-container {
+  height: 100vh;
+  background: #F7F7F5;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.search-bar {
+  background: #FFFFFF;
+  padding: 12px 20px;
+  border-bottom: 1px solid #ECECE8;
+}
+
+.search-input {
+  background: #F7F7F5;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+.filter-scroll {
+  background: #FFFFFF;
+  white-space: nowrap;
+}
+
+.filter-chips {
+  display: flex;
+  padding: 12px 20px;
+  gap: 12px;
+}
+
+.filter-chip {
+  padding: 6px 16px;
+  border-radius: 16px;
+  background: #F7F7F5;
+  color: #6B6B6B;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.filter-chip.active {
+  background: #1D1D1D;
+  color: #FFFFFF;
+}
+
+.travel-list {
+  flex: 1;
+  padding: 16px 20px;
+  overflow-y: auto;
+  padding-bottom: 80px;
+}
+
+.travel-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid #ECECE8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.travel-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1D1D1D;
+  flex: 1;
+}
+
+.travel-price {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1D1D1D;
+  margin-left: 12px;
+}
+
+.travel-highlights {
+  font-size: 14px;
+  color: #6B6B6B;
+  line-height: 1.6;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.travel-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid #ECECE8;
+}
+
+.travel-info {
+  font-size: 13px;
+  color: #9B9B9B;
+}
+
+.travel-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.tag {
+  font-size: 11px;
+  color: #1D1D1D;
+  background: #F7F7F5;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-text {
+  font-size: 14px;
+  color: #9B9B9B;
+}
+
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  padding: 12px 20px;
+  border-top: 1px solid #ECECE8;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.consult-btn {
+  width: 100%;
+  background: #1D1D1D;
+  color: #FFFFFF;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+}

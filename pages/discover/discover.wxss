@@ -1,0 +1,249 @@
+/* 发现 · 中式背景与装饰（与课程页一致，防止边框溢出屏幕） */
+.discover-container {
+  min-height: 100vh;
+  background-color: #F5F0E8;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 3px,
+    rgba(196, 181, 154, 0.06) 3px,
+    rgba(196, 181, 154, 0.06) 4px
+  );
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.segment-bar {
+  display: flex;
+  background: #FFFBF5;
+  border-bottom: 2px solid #C4B59A;
+}
+
+.segment-item {
+  flex: 1;
+  text-align: center;
+  padding: 16px;
+  font-size: 16px;
+  color: #6B5344;
+  position: relative;
+}
+
+.segment-item.active {
+  color: #2C1810;
+  font-weight: 600;
+}
+
+.segment-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: #8B3A3A;
+  border-radius: 2px;
+}
+
+.tab-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.works-header {
+  padding: 16px 20px;
+  background: #FFFBF5;
+  border-bottom: 1px solid #E8E0D4;
+}
+
+.submit-btn {
+  background: #2C1810;
+  color: #F5F0E8;
+  border-radius: 4px;
+  padding: 10px 24px;
+  font-size: 14px;
+  width: 100px;
+  border: 1px solid #2C1810;
+}
+
+.works-list,
+.auction-list {
+  flex: 1;
+  padding: 16px 20px;
+  box-sizing: border-box;
+}
+
+.work-card {
+  background: #FFFBF5;
+  border-radius: 4px;
+  border: 1px solid #C4B59A;
+  box-shadow: 0 2px 12px rgba(44, 24, 16, 0.06);
+  margin-bottom: 16px;
+  overflow: hidden;
+  position: relative;
+  padding-left: 24px;
+  box-sizing: border-box;
+}
+.work-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 16px;
+  bottom: 16px;
+  width: 4px;
+  background: #8B3A3A;
+  border-radius: 0 2px 2px 0;
+}
+
+.work-image {
+  width: 100%;
+  height: 200px;
+  background: #F5F0E8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #E8E0D4;
+}
+
+.image-placeholder {
+  color: #8B7355;
+  font-size: 12px;
+}
+
+.work-info {
+  padding: 16px;
+}
+
+.work-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2C1810;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.work-author {
+  font-size: 13px;
+  color: #6B5344;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.work-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.work-votes {
+  font-size: 14px;
+  color: #2C1810;
+  font-weight: 600;
+}
+
+.vote-btn {
+  background: #2C1810;
+  color: #F5F0E8;
+  border-radius: 4px;
+  padding: 6px 16px;
+  font-size: 13px;
+  border: 1px solid #2C1810;
+}
+
+.vote-btn[disabled] {
+  background: #E8E0D4;
+  color: #8B7355;
+  border-color: #D4C4A8;
+}
+
+.auction-card {
+  background: #FFFBF5;
+  border-radius: 4px;
+  border: 1px solid #C4B59A;
+  box-shadow: 0 2px 12px rgba(44, 24, 16, 0.06);
+  padding: 20px;
+  margin-bottom: 16px;
+  position: relative;
+  padding-left: 24px;
+  box-sizing: border-box;
+}
+.auction-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 16px;
+  bottom: 16px;
+  width: 4px;
+  background: #8B3A3A;
+  border-radius: 0 2px 2px 0;
+}
+
+.auction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.auction-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2C1810;
+  flex: 1;
+}
+
+.auction-status {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 2px;
+  margin-left: 8px;
+}
+
+.auction-status.live {
+  background: rgba(139, 58, 58, 0.12);
+  color: #8B3A3A;
+  border: 1px solid rgba(139, 58, 58, 0.3);
+}
+
+.auction-status.upcoming {
+  background: rgba(107, 83, 68, 0.15);
+  color: #6B5344;
+  border: 1px solid #C4B59A;
+}
+
+.auction-status.ended {
+  background: #E8E0D4;
+  color: #8B7355;
+  border: 1px solid #D4C4A8;
+}
+
+.auction-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.auction-price {
+  font-size: 15px;
+  font-weight: 600;
+  color: #8B3A3A;
+}
+
+.auction-time {
+  font-size: 13px;
+  color: #6B5344;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-text {
+  font-size: 14px;
+  color: #8B7355;
+}

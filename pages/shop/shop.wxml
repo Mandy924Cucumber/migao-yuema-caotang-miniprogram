@@ -1,0 +1,45 @@
+<view class="shop-container">
+  <!-- 搜索框 -->
+  <view class="search-bar">
+    <input class="search-input" placeholder="搜索文创/铜器/作品" value="{{searchKeyword}}" bindinput="onSearchInput" />
+  </view>
+
+  <!-- 品类Tabs -->
+  <view class="category-tabs">
+    <view class="tab-item {{selectedCategory === 'all' ? 'active' : ''}}" bindtap="selectCategory" data-category="all">全部</view>
+    <view class="tab-item {{selectedCategory === 'wenchuang' ? 'active' : ''}}" bindtap="selectCategory" data-category="wenchuang">文创</view>
+    <view class="tab-item {{selectedCategory === 'zhubingren' ? 'active' : ''}}" bindtap="selectCategory" data-category="zhubingren">朱炳仁铜</view>
+    <view class="tab-item {{selectedCategory === 'huangyulong' ? 'active' : ''}}" bindtap="selectCategory" data-category="huangyulong">黄玉龙作品</view>
+    <view class="tab-item {{selectedCategory === 'taohuantang' ? 'active' : ''}}" bindtap="selectCategory" data-category="taohuantang">淘换堂</view>
+  </view>
+
+  <!-- 商品列表 -->
+  <scroll-view class="product-list" scroll-y refresher-enabled="{{true}}" refresher-triggered="{{refreshing}}" bindrefresherrefresh="onRefresh" bindscrolltolower="onLoadMore">
+    <view class="products-grid">
+      <view class="product-card" wx:for="{{productList}}" wx:key="id" bindtap="goToDetail" data-product="{{item}}">
+        <view class="product-image">
+          <image wx:if="{{item.imageUrl}}" class="product-img" src="{{item.imageUrl}}" mode="aspectFill" />
+          <view wx:else class="image-placeholder">{{item.brand}}</view>
+        </view>
+        <view class="product-info">
+          <text class="product-title">{{item.title}}</text>
+          <text class="product-brand">{{item.brand}}</text>
+          <text class="product-price">¥{{item.price}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 加载更多 -->
+    <view class="load-more" wx:if="{{hasMore}}">
+      <text class="load-more-text">加载中...</text>
+    </view>
+    <view class="load-more" wx:if="{{!hasMore && productList.length > 0}}">
+      <text class="load-more-text">没有更多了</text>
+    </view>
+
+    <!-- 空状态 -->
+    <view class="empty-state" wx:if="{{!loading && productList.length === 0}}">
+      <view class="empty-text">暂无商品</view>
+    </view>
+  </scroll-view>
+</view>

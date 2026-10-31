@@ -1,0 +1,43 @@
+<view class="travel-container">
+  <!-- 搜索框 -->
+  <view class="search-bar">
+    <input class="search-input" placeholder="搜索线路/城市" value="{{searchKeyword}}" bindinput="onSearchInput" />
+  </view>
+
+  <!-- 筛选chips -->
+  <scroll-view class="filter-scroll" scroll-x>
+    <view class="filter-chips">
+      <view class="filter-chip {{selectedDays === 'all' ? 'active' : ''}}" bindtap="selectDays" data-days="all">全部</view>
+      <view class="filter-chip {{selectedDays === '1-2' ? 'active' : ''}}" bindtap="selectDays" data-days="1-2">1-2天</view>
+      <view class="filter-chip {{selectedDays === '3-5' ? 'active' : ''}}" bindtap="selectDays" data-days="3-5">3-5天</view>
+      <view class="filter-chip {{selectedDays === '7+' ? 'active' : ''}}" bindtap="selectDays" data-days="7+">7天+</view>
+    </view>
+  </scroll-view>
+
+  <!-- 线路列表 -->
+  <scroll-view class="travel-list" scroll-y enable-flex refresher-enabled="{{true}}" refresher-triggered="{{refreshing}}" bindrefresherrefresh="onRefresh">
+    <view class="travel-card" wx:for="{{travelList}}" wx:key="id" bindtap="showDetail" data-item="{{item}}">
+      <view class="card-header">
+        <text class="travel-title">{{item.title}}</text>
+        <text class="travel-price">¥{{item.priceFrom}}起</text>
+      </view>
+      <text class="travel-highlights">{{item.highlights}}</text>
+      <view class="travel-footer">
+        <text class="travel-info">{{item.days}}天 · {{item.city}}</text>
+        <view class="travel-tags">
+          <text class="tag" wx:for="{{item.tags}}" wx:key="index">{{item}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 空状态 -->
+    <view class="empty-state" wx:if="{{travelList.length === 0}}">
+      <text class="empty-text">暂无线路</text>
+    </view>
+  </scroll-view>
+
+  <!-- 底部按钮 -->
+  <view class="bottom-bar">
+    <button class="consult-btn" bindtap="goToCustom">咨询/预约</button>
+  </view>
+</view>

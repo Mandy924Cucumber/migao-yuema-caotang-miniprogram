@@ -1,0 +1,249 @@
+.auction-detail-container {
+  min-height: 100vh;
+  background: #F7F7F5;
+  padding-bottom: 20px;
+}
+
+.auction-image {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  background: #F7F7F5;
+  overflow: hidden;
+}
+
+.auction-img {
+  width: 100%;
+  height: 100%;
+}
+
+.auction-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.price-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid #ECECE8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 20px;
+  margin: 20px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #ECECE8;
+}
+
+.price-row:last-child {
+  border-bottom: none;
+}
+
+.price-label {
+  font-size: 14px;
+  color: #6B6B6B;
+}
+
+.price-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1D1D1D;
+}
+
+.status-badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.status-badge.live {
+  background: #FFE5E5;
+  color: #FF4444;
+}
+
+.status-badge.upcoming {
+  background: #FFF4E5;
+  color: #FF8800;
+}
+
+.status-badge.ended {
+  background: #ECECE8;
+  color: #9B9B9B;
+}
+
+.deposit-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid #ECECE8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 20px;
+  margin: 0 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deposit-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.deposit-label {
+  font-size: 13px;
+  color: #6B6B6B;
+}
+
+.deposit-amount {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1D1D1D;
+}
+
+.deposit-btn {
+  background: #1D1D1D;
+  color: #FFFFFF;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.deposit-status {
+  padding: 10px 20px;
+}
+
+.status-text {
+  font-size: 14px;
+  color: #44AA44;
+}
+
+.bid-section {
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid #ECECE8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 20px;
+  margin: 0 20px 20px;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1D1D1D;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.bid-input-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.bid-input {
+  flex: 1;
+  padding: 12px;
+  background: #F7F7F5;
+  border-radius: 8px;
+  font-size: 14px;
+  border: 1px solid #ECECE8;
+}
+
+.quick-bid-btn {
+  background: #F7F7F5;
+  color: #1D1D1D;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  border: 1px solid #ECECE8;
+}
+
+.bid-btn {
+  width: 100%;
+  background: #1D1D1D;
+  color: #FFFFFF;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.bid-btn[disabled] {
+  background: #ECECE8;
+  color: #9B9B9B;
+}
+
+.bids-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid #ECECE8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 20px;
+  margin: 0 20px 20px;
+}
+
+.bids-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bid-item {
+  padding: 12px;
+  background: #F7F7F5;
+  border-radius: 8px;
+}
+
+.bid-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.bid-user {
+  font-size: 14px;
+  color: #1D1D1D;
+}
+
+.bid-amount {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1D1D1D;
+}
+
+.bid-time {
+  font-size: 12px;
+  color: #9B9B9B;
+}
+
+.empty-bids {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.empty-text {
+  font-size: 14px;
+  color: #9B9B9B;
+}
+
+.notice-card {
+  padding: 0 20px;
+}
+
+.notice-text {
+  font-size: 12px;
+  color: #9B9B9B;
+  line-height: 1.6;
+}

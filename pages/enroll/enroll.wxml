@@ -1,0 +1,40 @@
+<view class="enroll-container">
+  <!-- 课程摘要 -->
+  <view class="course-summary">
+    <text class="summary-title">{{courseInfo.title}}</text>
+    <text class="summary-info">{{courseInfo.date}} {{courseInfo.time}}</text>
+    <text class="summary-info">{{courseInfo.location}}</text>
+    <view class="summary-price">
+      <text wx:if="{{courseInfo.type === 'public'}}">押金：¥{{courseInfo.deposit}}</text>
+      <text wx:else>价格：¥{{courseInfo.price}}</text>
+    </view>
+  </view>
+
+  <!-- 表单 -->
+  <view class="form-section">
+    <view class="form-item">
+      <text class="form-label">联系人<text class="required">*</text></text>
+      <input class="form-input" placeholder="请输入联系人姓名" value="{{form.contactName}}" bindinput="onContactNameInput" />
+    </view>
+    <view class="form-item">
+      <text class="form-label">手机号<text class="required">*</text></text>
+      <input class="form-input" type="number" placeholder="请输入11位手机号" value="{{form.phone}}" bindinput="onPhoneInput" />
+    </view>
+    <view class="form-item">
+      <text class="form-label">备注</text>
+      <textarea class="form-textarea" placeholder="选填，如：2人同行" value="{{form.remark}}" bindinput="onRemarkInput" />
+    </view>
+  </view>
+
+  <!-- 说明 -->
+  <view class="notice" wx:if="{{courseInfo.type === 'public'}}">
+    <text class="notice-text">公益课押金将在到场核销后自动退还</text>
+  </view>
+
+  <!-- 提交按钮 -->
+  <view class="bottom-bar">
+    <button class="submit-btn" bindtap="handleSubmit" disabled="{{submitting}}">
+      {{submitting ? '支付中...' : '确认报名并支付'}}
+    </button>
+  </view>
+</view>

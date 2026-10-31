@@ -1,0 +1,45 @@
+<view class="cart-container">
+  <block wx:if="{{cartList.length > 0}}">
+    <view class="cart-list">
+      <view class="cart-item" wx:for="{{cartList}}" wx:key="id">
+        <view class="cart-check" bindtap="toggleSelect" data-index="{{index}}">
+          <view class="check-icon {{item.selected ? 'checked' : ''}}"></view>
+        </view>
+        <view class="cart-info">
+          <text class="cart-title">{{item.title}}</text>
+          <text class="cart-brand">{{item.brand}}</text>
+          <view class="cart-bottom">
+            <text class="cart-price">¥{{item.price}}</text>
+            <view class="quantity-control">
+              <view class="qty-btn" bindtap="changeQuantity" data-index="{{index}}" data-delta="{{-1}}">-</view>
+              <text class="qty-num">{{item.quantity}}</text>
+              <view class="qty-btn" bindtap="changeQuantity" data-index="{{index}}" data-delta="{{1}}">+</view>
+            </view>
+          </view>
+        </view>
+        <view class="cart-remove" bindtap="handleRemove" data-index="{{index}}">×</view>
+      </view>
+    </view>
+
+    <view class="cart-footer">
+      <view class="footer-left" bindtap="toggleSelectAll">
+        <view class="check-icon {{selectAll ? 'checked' : ''}}"></view>
+        <text class="select-all-text">全选</text>
+      </view>
+      <view class="footer-right">
+        <view class="total-info">
+          <text class="total-label">合计：</text>
+          <text class="total-price">¥{{totalPrice}}</text>
+          <text class="total-count">（{{totalCount}}件）</text>
+        </view>
+        <button class="checkout-btn" bindtap="checkout">结算</button>
+      </view>
+    </view>
+  </block>
+
+  <view class="empty-state" wx:else>
+    <text class="empty-icon">🛒</text>
+    <text class="empty-text">购物车空空如也</text>
+    <button class="empty-btn" bindtap="goShopping">去逛逛</button>
+  </view>
+</view>

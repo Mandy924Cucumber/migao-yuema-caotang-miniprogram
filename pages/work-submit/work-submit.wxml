@@ -1,0 +1,37 @@
+<view class="work-submit-container">
+  <!-- 上传区 -->
+  <view class="upload-section">
+    <text class="section-title">上传作品</text>
+    <view class="upload-area" bindtap="chooseImage">
+      <view class="upload-placeholder" wx:if="{{!imagePath}}">
+        <text class="upload-icon">+</text>
+        <text class="upload-text">选择图片</text>
+      </view>
+      <image class="upload-preview" wx:else src="{{imagePath}}" mode="aspectFit"></image>
+    </view>
+    <text class="upload-tip">支持1-3张图片，本期先支持1张</text>
+  </view>
+
+  <!-- 表单 -->
+  <view class="form-section">
+    <view class="form-item">
+      <text class="form-label">作品标题<text class="required">*</text></text>
+      <input class="form-input" placeholder="请输入作品标题" value="{{form.title}}" bindinput="onTitleInput" />
+    </view>
+    <view class="form-item">
+      <text class="form-label">作者名<text class="required">*</text></text>
+      <input class="form-input" placeholder="请输入作者名" value="{{form.author}}" bindinput="onAuthorInput" />
+    </view>
+    <view class="form-item">
+      <text class="form-label">作品说明</text>
+      <textarea class="form-textarea" placeholder="选填，描述作品内容" value="{{form.desc}}" bindinput="onDescInput" />
+    </view>
+  </view>
+
+  <!-- 提交按钮 -->
+  <view class="bottom-bar">
+    <button class="submit-btn" bindtap="handleSubmit" disabled="{{submitting}}">
+      {{submitting ? '提交中...' : '提交'}}
+    </button>
+  </view>
+</view>

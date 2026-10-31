@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/courses/courses",
+    "pages/shop/shop",
+    "pages/discover/discover",
+    "pages/my/my",
+    "pages/course-detail/course-detail",
+    "pages/enroll/enroll",
+    "pages/product-detail/product-detail",
+    "pages/work-submit/work-submit",
+    "pages/auction-detail/auction-detail",
+    "pages/travel/travel",
+    "pages/custom/custom",
+    "pages/cart/cart",
+    "pages/orders/orders",
+    "pages/member-center/member-center",
+    "pages/invite/invite"
+  ],
+  "window": {
+    "navigationBarTitleText": "阅马草堂",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F7F7F5",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#6B6B6B",
+    "selectedColor": "#1D1D1D",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      { "pagePath": "pages/home/home", "text": "首页", "iconPath": "assets/icons/1.png", "selectedIconPath": "assets/icons/1.png" },
+      { "pagePath": "pages/courses/courses", "text": "课程", "iconPath": "assets/icons/2.png", "selectedIconPath": "assets/icons/2.png" },
+      { "pagePath": "pages/shop/shop", "text": "商城", "iconPath": "assets/icons/3.png", "selectedIconPath": "assets/icons/3.png" },
+      { "pagePath": "pages/discover/discover", "text": "发现", "iconPath": "assets/icons/4.png", "selectedIconPath": "assets/icons/4.png" },
+      { "pagePath": "pages/my/my", "text": "我的", "iconPath": "assets/icons/5.png", "selectedIconPath": "assets/icons/5.png" }
+    ]
+  }
+}

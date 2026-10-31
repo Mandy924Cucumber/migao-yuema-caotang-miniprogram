@@ -1,0 +1,55 @@
+<view class="discover-container">
+  <!-- 分段控件 -->
+  <view class="segment-bar">
+    <view class="segment-item {{activeTab === 'works' ? 'active' : ''}}" bindtap="switchTab" data-tab="works">作品</view>
+    <view class="segment-item {{activeTab === 'auction' ? 'active' : ''}}" bindtap="switchTab" data-tab="auction">拍卖</view>
+  </view>
+
+  <!-- 作品段 -->
+  <view class="tab-content" wx:if="{{activeTab === 'works'}}">
+    <view class="works-header">
+      <button class="submit-btn" bindtap="goToSubmit">投稿</button>
+    </view>
+    <scroll-view class="works-list" scroll-y refresher-enabled="{{true}}" refresher-triggered="{{refreshing}}" bindrefresherrefresh="onRefresh">
+      <view class="work-card" wx:for="{{worksList}}" wx:key="id">
+        <view class="work-image">
+          <view class="image-placeholder">作品图</view>
+        </view>
+        <view class="work-info">
+          <text class="work-title">{{item.title}}</text>
+          <text class="work-author">作者：{{item.author}}</text>
+          <view class="work-footer">
+            <text class="work-votes">票数：{{item.votes}}</text>
+            <button class="vote-btn" bindtap="voteWork" data-work="{{item}}" disabled="{{item.voted}}">{{item.voted ? '已投票' : '投票'}}</button>
+          </view>
+        </view>
+      </view>
+
+      <!-- 空状态 -->
+      <view class="empty-state" wx:if="{{worksList.length === 0}}">
+        <view class="empty-text">暂无作品</view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 拍卖段 -->
+  <view class="tab-content" wx:if="{{activeTab === 'auction'}}">
+    <scroll-view class="auction-list" scroll-y refresher-enabled="{{true}}" refresher-triggered="{{refreshing}}" bindrefresherrefresh="onRefresh">
+      <view class="auction-card" wx:for="{{auctionList}}" wx:key="id" bindtap="goToAuctionDetail" data-auction="{{item}}">
+        <view class="auction-header">
+          <text class="auction-title">{{item.title}}</text>
+          <text class="auction-status {{item.status}}">{{item.status === 'live' ? '进行中' : item.status === 'upcoming' ? '即将开始' : '已结束'}}</text>
+        </view>
+        <view class="auction-info">
+          <text class="auction-price">当前价：¥{{item.currentPrice}}</text>
+          <text class="auction-time">结束时间：{{item.endTime}}</text>
+        </view>
+      </view>
+
+      <!-- 空状态 -->
+      <view class="empty-state" wx:if="{{auctionList.length === 0}}">
+        <view class="empty-text">暂无拍卖</view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

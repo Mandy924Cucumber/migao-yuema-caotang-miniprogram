@@ -1,0 +1,203 @@
+/* 课程详情 · 中式背景与装饰 */
+.course-detail-container {
+  min-height: 100vh;
+  background-color: #F5F0E8;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 3px,
+    rgba(196, 181, 154, 0.06) 3px,
+    rgba(196, 181, 154, 0.06) 4px
+  );
+  padding-bottom: 80px;
+}
+
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+  color: #8B7355;
+}
+
+.cover-section {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  background: linear-gradient(180deg, #E8E0D4 0%, #F5F0E8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid #C4B59A;
+}
+
+.cover-placeholder {
+  color: #8B7355;
+  font-size: 14px;
+}
+
+.cover-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(44, 24, 16, 0.75), transparent);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.course-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #F5F0E8;
+  flex: 1;
+}
+
+.course-type-badge {
+  font-size: 12px;
+  color: #F5F0E8;
+  background: rgba(139, 58, 58, 0.8);
+  padding: 4px 10px;
+  border-radius: 2px;
+  margin-left: 12px;
+  border: 1px solid rgba(245, 240, 232, 0.4);
+}
+
+.detail-content {
+  padding: 20px;
+}
+
+.info-card {
+  background: #FFFBF5;
+  border-radius: 4px;
+  border: 1px solid #C4B59A;
+  box-shadow: 0 2px 12px rgba(44, 24, 16, 0.06);
+  padding: 20px;
+  margin-bottom: 16px;
+  position: relative;
+  padding-left: 24px;
+}
+.info-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 16px;
+  bottom: 16px;
+  width: 3px;
+  background: #8B3A3A;
+  border-radius: 0 2px 2px 0;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #E8E0D4;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-size: 14px;
+  color: #6B5344;
+}
+
+.info-value {
+  font-size: 14px;
+  color: #2C1810;
+  font-weight: 500;
+}
+
+.intro-card,
+.rules-card {
+  background: #FFFBF5;
+  border-radius: 4px;
+  border: 1px solid #C4B59A;
+  box-shadow: 0 2px 12px rgba(44, 24, 16, 0.06);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.intro-title,
+.rules-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2C1810;
+  display: block;
+  margin-bottom: 12px;
+  padding-left: 12px;
+  border-left: 4px solid #8B3A3A;
+}
+
+.intro-text {
+  font-size: 14px;
+  color: #6B5344;
+  line-height: 1.8;
+}
+
+.rules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rule-item {
+  font-size: 13px;
+  color: #6B5344;
+  line-height: 1.6;
+  padding-left: 12px;
+  position: relative;
+}
+
+.rule-item::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: #8B3A3A;
+}
+
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #FFFBF5;
+  padding: 12px 20px;
+  border-top: 2px solid #C4B59A;
+  box-shadow: 0 -2px 12px rgba(44, 24, 16, 0.08);
+}
+
+.enroll-btn {
+  width: 100%;
+  background: #2C1810;
+  color: #F5F0E8;
+  border-radius: 4px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid #2C1810;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-text {
+  font-size: 14px;
+  color: #8B7355;
+  display: block;
+  margin-bottom: 24px;
+}
+
+.empty-btn {
+  background: #2C1810;
+  color: #F5F0E8;
+  border-radius: 4px;
+  padding: 10px 24px;
+  font-size: 14px;
+  border: 1px solid #2C1810;
+}

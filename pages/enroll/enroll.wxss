@@ -1,0 +1,149 @@
+/* 报名支付 · 中式背景与装饰 */
+.enroll-container {
+  min-height: 100vh;
+  background-color: #F5F0E8;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 3px,
+    rgba(196, 181, 154, 0.06) 3px,
+    rgba(196, 181, 154, 0.06) 4px
+  );
+  padding-bottom: 80px;
+}
+
+.course-summary {
+  background: #FFFBF5;
+  border-radius: 4px;
+  border: 1px solid #C4B59A;
+  box-shadow: 0 2px 12px rgba(44, 24, 16, 0.06);
+  padding: 20px;
+  margin: 20px;
+  position: relative;
+  padding-left: 24px;
+}
+.course-summary::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 16px;
+  bottom: 16px;
+  width: 3px;
+  background: #8B3A3A;
+  border-radius: 0 2px 2px 0;
+}
+
+.summary-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2C1810;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.summary-info {
+  font-size: 14px;
+  color: #6B5344;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.summary-price {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #E8E0D4;
+}
+
+.summary-price text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #8B3A3A;
+}
+
+.form-section {
+  background: #FFFBF5;
+  border-radius: 4px;
+  border: 1px solid #C4B59A;
+  box-shadow: 0 2px 12px rgba(44, 24, 16, 0.06);
+  padding: 20px;
+  margin: 0 20px 20px;
+}
+
+.form-item {
+  margin-bottom: 20px;
+}
+
+.form-item:last-child {
+  margin-bottom: 0;
+}
+
+.form-label {
+  font-size: 14px;
+  color: #2C1810;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.required {
+  color: #8B3A3A;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  background: #F5F0E8;
+  border-radius: 4px;
+  font-size: 14px;
+  border: 1px solid #D4C4A8;
+  color: #2C1810;
+}
+
+.form-textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 12px;
+  background: #F5F0E8;
+  border-radius: 4px;
+  font-size: 14px;
+  border: 1px solid #D4C4A8;
+  color: #2C1810;
+}
+
+.notice {
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+.notice-text {
+  font-size: 12px;
+  color: #8B7355;
+  line-height: 1.6;
+}
+
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #FFFBF5;
+  padding: 12px 20px;
+  border-top: 2px solid #C4B59A;
+  box-shadow: 0 -2px 12px rgba(44, 24, 16, 0.08);
+}
+
+.submit-btn {
+  width: 100%;
+  background: #2C1810;
+  color: #F5F0E8;
+  border-radius: 4px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid #2C1810;
+}
+
+.submit-btn[disabled] {
+  background: #E8E0D4;
+  color: #8B7355;
+  border-color: #D4C4A8;
+}

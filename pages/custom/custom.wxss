@@ -1,0 +1,118 @@
+.custom-container {
+  min-height: 100vh;
+  background: #F7F7F5;
+  padding-bottom: 80px;
+}
+
+.guide-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid #ECECE8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 20px;
+  margin: 20px;
+}
+
+.guide-text {
+  font-size: 14px;
+  color: #6B6B6B;
+  line-height: 1.6;
+}
+
+.form-section {
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid #ECECE8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 20px;
+  margin: 0 20px 20px;
+}
+
+.form-item {
+  margin-bottom: 20px;
+}
+
+.form-item:last-child {
+  margin-bottom: 0;
+}
+
+.form-label {
+  font-size: 14px;
+  color: #1D1D1D;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.required {
+  color: #FF4444;
+}
+
+.picker-view {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #F7F7F5;
+  border-radius: 8px;
+  border: 1px solid #ECECE8;
+}
+
+.picker-text {
+  font-size: 14px;
+  color: #1D1D1D;
+}
+
+.picker-text:empty::before {
+  content: '请选择';
+  color: #9B9B9B;
+}
+
+.picker-arrow {
+  font-size: 16px;
+  color: #9B9B9B;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  background: #F7F7F5;
+  border-radius: 8px;
+  font-size: 14px;
+  border: 1px solid #ECECE8;
+}
+
+.form-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  background: #F7F7F5;
+  border-radius: 8px;
+  font-size: 14px;
+  border: 1px solid #ECECE8;
+}
+
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  padding: 12px 20px;
+  border-top: 1px solid #ECECE8;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.submit-btn {
+  width: 100%;
+  background: #1D1D1D;
+  color: #FFFFFF;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.submit-btn[disabled] {
+  background: #ECECE8;
+  color: #9B9B9B;
+}

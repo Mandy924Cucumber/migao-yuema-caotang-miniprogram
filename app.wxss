@@ -1,0 +1,155 @@
+/* ========== 中式主题 · 阅马草堂 ========== */
+/* 色板：宣纸米色、墨色、朱砂、木色裱框、茶色 */
+
+page {
+  /* 宣纸质感背景：米色 + 极淡竖纹 */
+  background-color: #F5F0E8;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 3px,
+    rgba(196, 181, 154, 0.06) 3px,
+    rgba(196, 181, 154, 0.06) 4px
+  );
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'STSong', 'SimSun', 'Microsoft YaHei', serif;
+  color: #2C1810;
+  font-size: 14px;
+  line-height: 1.7;
+  /* 防止页面内容横向溢出 */
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* 中式卡片：暖白纸面 + 木色裱框边 */
+.card {
+  background: #FFFBF5;
+  border-radius: 4px;
+  border: 1px solid #C4B59A;
+  box-shadow: 0 2px 12px rgba(44, 24, 16, 0.06);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+/* 卡片带左侧朱砂竖线装饰 */
+.card-zhongshi {
+  position: relative;
+  background: #FFFBF5;
+  border-radius: 4px;
+  border: 1px solid #C4B59A;
+  box-shadow: 0 2px 12px rgba(44, 24, 16, 0.06);
+  padding: 16px 20px 16px 24px;
+  margin-bottom: 16px;
+}
+.card-zhongshi::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 3px;
+  background: #8B3A3A;
+  border-radius: 0 2px 2px 0;
+}
+
+/* 区块标题 · 中式竖线 */
+.section-title-zhongshi {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2C1810;
+  padding-left: 12px;
+  border-left: 4px solid #8B3A3A;
+  margin-bottom: 16px;
+}
+
+/* 按钮：墨色 / 朱砂描边 */
+.btn {
+  background: #2C1810;
+  color: #F5F0E8;
+  border-radius: 4px;
+  padding: 12px 24px;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #2C1810;
+}
+
+.btn-secondary {
+  background: #FFFBF5;
+  color: #2C1810;
+  border: 1px solid #C4B59A;
+}
+
+.btn-zhongshi {
+  background: #FFFBF5;
+  color: #8B3A3A;
+  border: 1px solid #8B3A3A;
+}
+
+.btn:active {
+  opacity: 0.88;
+}
+
+/* 文字层级 */
+.text-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2C1810;
+  line-height: 1.4;
+}
+
+.text-subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: #2C1810;
+}
+
+.text-body {
+  font-size: 14px;
+  color: #6B5344;
+  line-height: 1.6;
+}
+
+.text-caption {
+  font-size: 12px;
+  color: #8B7355;
+}
+
+/* 中式分割线 */
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #D4C4A8, transparent);
+  margin: 16px 0;
+}
+
+/* 骨架屏 */
+.skeleton {
+  background: #E8E0D4;
+  border-radius: 4px;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-loading {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.container {
+  padding: 16px 20px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #8B7355;
+}
+
+.empty-state .empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.empty-state .empty-text {
+  font-size: 14px;
+  margin-bottom: 24px;
+}

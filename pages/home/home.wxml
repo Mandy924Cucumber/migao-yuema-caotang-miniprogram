@@ -1,0 +1,40 @@
+<view class="home-page">
+  <!-- A. 顶部：标题 + 会员（极简，参考图上方留白感） -->
+  <view class="home-header">
+    <text class="home-title">阅马草堂</text>
+    <view class="home-member-btn" bindtap="goToMember">会员</view>
+  </view>
+
+  <!-- B. Banner 主视觉 -->
+  <view class="home-banner-wrap">
+    <view class="home-banner">
+      <image class="home-banner-img" src="/assets/image/banner.png" mode="aspectFill" />
+      <view class="home-banner-inner">
+        <text class="home-banner-sub">阅马草堂 · 文化生活空间</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- C. 功能入口（参考图下方：主文 + 副文 + 内容区） -->
+  <text class="home-section-title">功能入口</text>
+  <text class="home-section-desc">选择你想体验的</text>
+  <view class="home-cards" wx:if="{{!loading}}">
+    <view
+      class="home-card {{item.emphasize ? 'home-card--emphasize' : ''}}"
+      wx:for="{{homeCards}}"
+      wx:key="key"
+      bindtap="handleCardTap"
+      data-card="{{item}}"
+    >
+      <view class="home-card-accent" wx:if="{{item.emphasize}}"></view>
+      <text class="home-card-title">{{item.title}}</text>
+      <text class="home-card-desc">{{item.desc}}</text>
+    </view>
+  </view>
+
+  <view class="home-skeleton" wx:if="{{loading}}">
+    <view class="home-skeleton-card" wx:for="{{[1,2,3,4,5,6,7]}}" wx:key="index"></view>
+  </view>
+
+  <view class="home-empty" wx:if="{{!loading && homeCards.length === 0}}">暂无内容</view>
+</view>

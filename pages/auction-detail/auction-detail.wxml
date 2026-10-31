@@ -1,0 +1,77 @@
+<view class="auction-detail-container">
+  <!-- 标的图 -->
+  <view class="auction-image">
+    <image class="auction-img" src="/assets/image/paimai.png" mode="aspectFill" />
+    <text class="auction-title">{{auctionDetail.title}}</text>
+  </view>
+
+  <!-- 价格信息 -->
+  <view class="price-card">
+    <view class="price-row">
+      <text class="price-label">当前价</text>
+      <text class="price-value">¥{{auctionDetail.currentPrice}}</text>
+    </view>
+    <view class="price-row">
+      <text class="price-label">加价幅度</text>
+      <text class="price-value">¥{{auctionDetail.step}}</text>
+    </view>
+    <view class="price-row">
+      <text class="price-label">结束时间</text>
+      <text class="price-value">{{countdown}}</text>
+    </view>
+    <view class="price-row">
+      <text class="price-label">状态</text>
+      <text class="status-badge {{auctionDetail.status}}">
+        {{auctionDetail.status === 'live' ? '进行中' : auctionDetail.status === 'upcoming' ? '即将开始' : '已结束'}}
+      </text>
+    </view>
+  </view>
+
+  <!-- 保证金 -->
+  <view class="deposit-card">
+    <view class="deposit-info">
+      <text class="deposit-label">保证金</text>
+      <text class="deposit-amount">¥{{auctionDetail.deposit}}</text>
+    </view>
+    <button class="deposit-btn" wx:if="{{!isDeposited}}" bindtap="payDeposit">
+      {{payingDeposit ? '支付中...' : '缴保证金'}}
+    </button>
+    <view class="deposit-status" wx:else>
+      <text class="status-text">已缴纳</text>
+    </view>
+  </view>
+
+  <!-- 出价区 -->
+  <view class="bid-section">
+    <text class="section-title">出价</text>
+    <view class="bid-input-row">
+      <input class="bid-input" type="number" placeholder="输入出价金额" value="{{bidAmount}}" bindinput="onBidAmountInput" />
+      <button class="quick-bid-btn" bindtap="quickBid">+{{auctionDetail.step}}</button>
+    </view>
+    <button class="bid-btn" bindtap="submitBid" disabled="{{!isDeposited || auctionDetail.status !== 'live'}}">
+      {{isDeposited ? '出价' : '请先缴纳保证金'}}
+    </button>
+  </view>
+
+  <!-- 出价记录 -->
+  <view class="bids-card">
+    <text class="section-title">出价记录</text>
+    <view class="bids-list" wx:if="{{bidRecords.length > 0}}">
+      <view class="bid-item" wx:for="{{bidRecords}}" wx:key="id">
+        <view class="bid-header">
+          <text class="bid-user">{{item.userName}}</text>
+          <text class="bid-amount">¥{{item.amount}}</text>
+        </view>
+        <text class="bid-time">{{item.time}}</text>
+      </view>
+    </view>
+    <view class="empty-bids" wx:else>
+      <text class="empty-text">暂无出价记录</text>
+    </view>
+  </view>
+
+  <!-- 说明 -->
+  <view class="notice-card">
+    <text class="notice-text">公益拍卖，未中标自动退保证金</text>
+  </view>
+</view>
